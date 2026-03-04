@@ -1,0 +1,39 @@
+# Dependencies
+/node_modules
+/readme
+.pnp
+.pnp.js
+
+# PNPM
+.pnpm-store
+# ONLY IGNORE IF YOU DON'T WANT TO COMMIT IT
+pnpm-lock.yaml
+
+# Testing
+/coverage
+
+# Production
+/build
+/dist
+/tmp
+
+# Environment variables
+.env
+.env.local
+
+# IDE/Editor files (examples)
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Logs and miscellaneous
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+pnpm-debug.log*
+*.tgz
+.DS_Store

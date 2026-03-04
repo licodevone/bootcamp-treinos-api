@@ -1,0 +1,14 @@
+{
+  "$schema": "https://raw.githubusercontent.com/webpack/webpack/master/schemas/WebpackOptions.json",
+
+  "compilerOptions": {
+
+    "module": "nodenext",
+    "moduleResolution": "nodenext", //projeto node e não é pronjeto next
+    "target": "es2024", // ESM
+    "skipLibCheck": true,
+    "strict": true,
+    "outDir": "./dist"
+  },
+  "include": ["src"]
+}

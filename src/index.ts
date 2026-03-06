@@ -1,8 +1,14 @@
 import 'dotenv/config';
-import { serializerCompiler, validatorCompiler, ZodTypeProvider } from 'fastify-type-provider-zod';
+import { 
+  jsonSchemaTransform, 
+  serializerCompiler, 
+  validatorCompiler, 
+  ZodTypeProvider } from 'fastify-type-provider-zod';
 // ESM
 import Fastify, { fastify } from 'fastify';
 import { z } from 'zod';
+import fastifySwagger from '@fastify/swagger';
+import fastifySwaggerUI from '@fastify/swagger-ui';
 
 const app = Fastify({
   logger: true,
@@ -11,6 +17,23 @@ const app = Fastify({
 // Add schema validator and serializer
 app.setValidatorCompiler(validatorCompiler);
 app.setSerializerCompiler(serializerCompiler)
+
+app.register(fastifySwagger, {
+  openapi: {
+    info: {
+      title: 'SampleApi',
+      description: 'Sample backend service',
+      version: '1.0.0',
+    },
+    servers: [],
+  },
+  transform: jsonSchemaTransform,
+
+});
+
+app.register(fastifySwaggerUI, {
+  routePrefix: '/docs',
+});
 
 // Declare a route
 app.withTypeProvider<ZodTypeProvider>().route({
@@ -45,3 +68,4 @@ const start = async () => {
   }
 }
 start();
+

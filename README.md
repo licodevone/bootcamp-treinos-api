@@ -1,5 +1,11 @@
 # Full Stack Club Course
 
-### `Training application using technologies such as NODEJS, Fastify, Zod, Better, Prisma ORM, Claude Code.`
+<h3 align='center'>
+  Hi there 👋 I'm Luis Eduardo 👨🏻‍💻
+</h3>
 
-[Click here](readme/README.md)
+### 💻 Technologies and Tools 🎯
+
+### # 👉🏻 `Training application using technologies such as NODEJS, Fastify, Zod, Better, Prisma ORM, Claude Code.`
+
+> [Click here](readme/README.md)

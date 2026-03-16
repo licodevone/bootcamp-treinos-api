@@ -1,4 +1,12 @@
-# Commands used to run the program
+# 💻 Commands used to run the program 👨🏻‍💻
+
+<div align="center">
+
+![alt text](image-18.png)
+
+![alt text](image-19.png)
+
+</div>
 
 ## NODEJS and PNPM
 
@@ -72,7 +80,7 @@ npx prisma studio
 
 ![alt text](image-13.png)
 
-workoutExercise
+- workoutExercise
 
 ![alt text](image-14.png)
 
@@ -152,17 +160,11 @@ npm install -g @anthropic-ai/claude-code
 
 ![alt text](image-8.png)
 
-<mark> aula-02
-
-![alt text](image-7.png)
-
 ## Github
 
 > https://comandosgit.github.io/
 
 - Fork the application so you can receive updates and also contribute.
-
-
 
 - create a new repository on the command line
 

@@ -184,13 +184,13 @@ $ git branch
 - Show the name of the Branch
 
 ```sh
-$ git branch-a
+$ git branch -a
 ```
 
 - Create a new branch
 
 ```sh
-$ git checkout -b
+$ git checkout -b <branch name>
 ```
 
 ![alt text](image-17.png)

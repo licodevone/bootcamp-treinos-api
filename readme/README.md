@@ -160,6 +160,10 @@ npm install -g @anthropic-ai/claude-code
 
 > https://comandosgit.github.io/
 
+- Fork the application so you can receive updates and also contribute.
+
+
+
 - create a new repository on the command line
 
 ```sh

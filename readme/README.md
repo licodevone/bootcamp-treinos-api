@@ -1,13 +1,5 @@
 # 💻 Commands used to run the program 👨🏻‍💻
 
-<div align="center">
-
-![alt text](image-18.png)
-
-![alt text](image-19.png)
-
-</div>
-
 ## NODEJS and PNPM
 
 ```sh

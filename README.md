@@ -6,6 +6,14 @@
 
 ### 💻 Technologies and Tools 🎯
 
+<div align="center">
+
+![alt text](readme/image-18.png)
+
+![alt text](readme/image-19.png)
+
+</div>
+
 ### # 👉🏻 `Training application using technologies such as NODEJS, Fastify, Zod, Better, Prisma ORM, Claude Code.`
 
 > [Click here](readme/README.md)

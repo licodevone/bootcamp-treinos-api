@@ -4,11 +4,16 @@
   Hi there 👋 I'm Luis Eduardo 👨🏻‍💻
 </h3>
 
+
 ### 💻 Technologies and Tools 🎯
+
+<br/><br/>
 
 <div align="center">
 
 ![alt text](readme/image-18.png)
+
+<br/><br/>
 
 ![alt text](readme/image-19.png)
 

@@ -33,6 +33,14 @@ $ docker compose up -d
 
 ![alt text](image-7.png)
 
+## Extensões VSCode
+
+- Prisma
+
+![alt text](image-23.png)
+
+![alt text](image-24.png)
+
 ## Generate, format, and update the database and run the application.
 
 ```sh

@@ -2,6 +2,23 @@
 
 ## NODEJS and PNPM
 
+### Install NVM
+
+> https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating
+
+```sh
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
+```
+
+### Install PNPM
+
+```sh
+$ curl -fsSL https://get.pnpm.io/install.sh | sh -
+```
+![alt text](image-20.png)
+
+### Installing Nodejs dependencies using pnpm
+
 ```sh
 $ pnpm i
 ```
@@ -259,3 +276,17 @@ $ git fetch --all
 ```sh
 4 git pull
 ```
+
+## Errors
+
+1. node: error while loading shared libraries: libatomic.so.1: cannot open shared object file: No such file or directory
+
+![alt text](image-21.png)
+
+Solution: 
+
+```sh
+$ sudo apt install libatomic1
+```
+
+![alt text](image-22.png)

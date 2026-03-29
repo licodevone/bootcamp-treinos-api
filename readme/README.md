@@ -282,7 +282,13 @@ $ git fetch --all
 ```
 
 ```sh
-4 git pull
+$ git pull
+```
+
+- Remove remote branch
+
+```sh
+$ git push origin --delete main
 ```
 
 ## Errors

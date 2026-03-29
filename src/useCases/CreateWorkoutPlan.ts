@@ -9,6 +9,7 @@ interface InputDto {
     name: string;
     weekDay: WeekDay;
     isRest: boolean;
+    coverImageUrl?: string;
     estimatedDurationInSeconds: number;
     exercises: Array<{
       order: number;
@@ -20,8 +21,29 @@ interface InputDto {
   }>;
 }
 
+export interface OutputDto {
+  id: string;
+  name: string;
+  workoutDays: Array<{
+    id: string;
+    name: string;
+    weekDay: WeekDay;
+    isRest: boolean;
+    coverImageUrl?: string;
+    estimatedDurationInSeconds: number;
+    exercises: Array<{
+      id: string;
+      order: number;
+      name: string;
+      sets: number;
+      reps: number;
+      restTimeInSeconds: number;
+    }>;
+  }>;
+}
+
 export class CreateWorkoutPlan {
-  async execute(dto: InputDto) {
+  async execute(dto: InputDto): Promise<OutputDto> {
     const existingWorkoutPlan = await prisma.workoutPlan.findFirst({
       where: {
         isActive: true,
@@ -53,6 +75,7 @@ export class CreateWorkoutPlan {
                   sets: exercise.sets,
                   reps: exercise.reps,
                   restTimeInSeconds: exercise.restTimeInSeconds,
+                  coverImageUrl: exercise.coverImageUrl,
                 })),
               },
             })),
@@ -73,7 +96,26 @@ export class CreateWorkoutPlan {
         throw new NotFoundError("Workout plan not found");
       }
 
-      return result;
+      return {
+        id: result.id,
+        name: result.name,
+        workoutDays: result.workoutDays.map((day) => ({
+          id: day.id,
+          name: day.name,
+          weekDay: day.weekDay,
+          isRest: day.isRest,
+          estimatedDurationInSeconds: day.estimatedDurationInSeconds,
+          exercises: day.exercises.map((exercise) => ({
+            id: exercise.id,
+            order: exercise.order,
+            name: exercise.name,
+            sets: exercise.sets,
+            reps: exercise.reps,
+            restTimeInSeconds: exercise.restTimeInSeconds,
+            coverImageUrl: exercise.coverImageUrl ?? undefined,
+          })),
+        })),
+      };
     });
   }
 }

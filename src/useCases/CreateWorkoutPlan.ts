@@ -12,6 +12,7 @@ interface InputDto {
     coverImageUrl?: string;
     estimatedDurationInSeconds: number;
     exercises: Array<{
+      coverImageUrl?: string;
       order: number;
       name: string;
       sets: number;

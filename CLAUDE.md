@@ -38,6 +38,9 @@ Workout training API (bootcamp-treinos-api) built with Fastify + TypeScript. Man
 ## Environment
 
 Requires a `.env` file with at minimum:
+
 - `DATABASE_URL` — PostgreSQL connection string
 - `PORT` (optional, defaults to 8081)
 - `BETTER_AUTH_SECRET` — secret for better-auth
+
+"Sempre responda em português do Brasil (pt-BR)."

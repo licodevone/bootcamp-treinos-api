@@ -12,7 +12,6 @@ interface InputDto {
     coverImageUrl?: string;
     estimatedDurationInSeconds: number;
     exercises: Array<{
-      coverImageUrl?: string;
       order: number;
       name: string;
       sets: number;
@@ -76,7 +75,7 @@ export class CreateWorkoutPlan {
                   sets: exercise.sets,
                   reps: exercise.reps,
                   restTimeInSeconds: exercise.restTimeInSeconds,
-                  coverImageUrl: exercise.coverImageUrl,
+                  coverImageUrl: workoutDay.coverImageUrl,
                 })),
               },
             })),
@@ -106,6 +105,7 @@ export class CreateWorkoutPlan {
           weekDay: day.weekDay,
           isRest: day.isRest,
           estimatedDurationInSeconds: day.estimatedDurationInSeconds,
+          coverImageUrl: day.coverImageUrl ?? undefined,
           exercises: day.exercises.map((exercise) => ({
             id: exercise.id,
             order: exercise.order,
@@ -113,7 +113,6 @@ export class CreateWorkoutPlan {
             sets: exercise.sets,
             reps: exercise.reps,
             restTimeInSeconds: exercise.restTimeInSeconds,
-            coverImageUrl: exercise.coverImageUrl ?? undefined,
           })),
         })),
       };

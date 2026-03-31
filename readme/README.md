@@ -15,6 +15,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
 ```sh
 $ curl -fsSL https://get.pnpm.io/install.sh | sh -
 ```
+
 ![alt text](image-20.png)
 
 ### Installing Nodejs dependencies using pnpm
@@ -163,20 +164,6 @@ npx prisma studio
 
 ![alt text](image-3.png)
 
-## Claude code
-
-> https://code.claude.com/docs/en/setup
-
-> https://platform.claude.com/docs/en/get-started
-
-```sh
-npm install -g @anthropic-ai/claude-code
-```
-
-![alt text](image-6.png)
-
-![alt text](image-8.png)
-
 ## Github
 
 > https://comandosgit.github.io/
@@ -291,16 +278,130 @@ $ git pull
 $ git push origin --delete main
 ```
 
+- To ensure that all future updates use rebase by default, use
+
+```sh
+$ git config --global pull.rebase true
+```
+
 ## Errors
 
 1. node: error while loading shared libraries: libatomic.so.1: cannot open shared object file: No such file or directory
 
 ![alt text](image-21.png)
 
-Solution: 
+Solution:
 
 ```sh
 $ sudo apt install libatomic1
 ```
 
 ![alt text](image-22.png)
+
+## Claude code
+
+> https://code.claude.com/docs/en/setup
+
+> https://platform.claude.com/docs/en/get-started
+
+```sh
+$ npm install -g @anthropic-ai/claude-code
+```
+
+![alt text](image-6.png)
+
+![alt text](image-8.png)
+
+### MCP Serena
+
+- Serena
+
+> https://oraios.github.io/serena/02-usage/030_clients.html
+
+```sh
+$ npm i -g ccusage
+```
+
+`To test`
+
+```sh
+$ ccusage blocks --live
+```
+
+```sh
+$ claude mcp add serena -- uvx --from git+https://github.com/oraios/serena serena start-mcp-server --context claude-code --project "$(pwd)"
+```
+
+![alt text](image-25.png)
+
+- Local access
+
+http://localhost:24282/dashboard
+
+![alt text](image-26.png)
+
+Ver aula 2 - 1:10 sobre MCP
+
+### MCP Figma
+
+- Serve para conectar o Figma diretamente ao Claude Code (um agente de IA no terminal), permitindo que a IA entenda, leia e edite projetos de design de forma estruturada, transformando designs em código de produção e vice-versa.
+
+> https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/#claude-code
+
+- Inserido diretamente no terminal
+
+```sh
+claude plugin install figma@claude-plugins-official
+```
+
+![alt text](image-27.png)
+
+- Inserido no Claude code
+
+```sh
+mcp add --transport http figma https://mcp.figma.com/mcp
+```
+
+- Depois de inserido no terminal o comando acima
+
+- Reiniciado o Claude code e inserido /mcp para autenticar o Figma
+
+![alt text](image-28.png)
+
+- Enter
+
+![alt text](image-29.png)
+
+- Enter novamente
+
+- Inserir a url mostrado pelo Claude e clicar em autorizar
+
+![alt text](image-30.png)
+
+![alt text](image-31.png)
+
+- Autenticado
+
+![alt text](image-32.png)
+
+### MCP Context 7
+
+- Serve para que o Claude tenha contexto das documentações mais recentes.
+
+```sh
+npx ctx7 setup
+```
+
+![alt text](image-33.png)
+
+![alt text](image-34.png)
+
+![alt text](image-35.png)
+
+![alt text](image-36.png)
+
+![alt text](image-38.png)
+
+![alt text](image-37.png)
+
+![alt text](image-39.png)

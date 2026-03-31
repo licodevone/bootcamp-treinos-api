@@ -2,6 +2,7 @@ import { NotFoundError } from "../errors/index.js";
 import { WeekDay } from "../generated/prisma/enums.js";
 import { prisma } from "../lib/db.js";
 
+// Data Transfer Object
 interface InputDto {
   userId: string;
   name: string;
@@ -9,8 +10,8 @@ interface InputDto {
     name: string;
     weekDay: WeekDay;
     isRest: boolean;
-    coverImageUrl?: string;
     estimatedDurationInSeconds: number;
+    coverImageUrl?: string;
     exercises: Array<{
       order: number;
       name: string;
@@ -21,18 +22,16 @@ interface InputDto {
   }>;
 }
 
-export interface OutputDto {
+interface OutputDto {
   id: string;
   name: string;
   workoutDays: Array<{
-    id: string;
     name: string;
     weekDay: WeekDay;
     isRest: boolean;
-    coverImageUrl?: string;
     estimatedDurationInSeconds: number;
+    coverImageUrl?: string;
     exercises: Array<{
-      id: string;
       order: number;
       name: string;
       sets: number;
@@ -49,7 +48,9 @@ export class CreateWorkoutPlan {
         isActive: true,
       },
     });
-    return prisma.$transaction(async (tx) => {
+    // Transaction - Atomicidade
+
+    return await prisma.$transaction(async (tx) => {
       if (existingWorkoutPlan) {
         await tx.workoutPlan.update({
           where: { id: existingWorkoutPlan.id },
@@ -68,6 +69,7 @@ export class CreateWorkoutPlan {
               weekDay: workoutDay.weekDay,
               isRest: workoutDay.isRest,
               estimatedDurationInSeconds: workoutDay.estimatedDurationInSeconds,
+              coverImageUrl: workoutDay.coverImageUrl,
               exercises: {
                 create: workoutDay.exercises.map((exercise) => ({
                   name: exercise.name,
@@ -75,7 +77,6 @@ export class CreateWorkoutPlan {
                   sets: exercise.sets,
                   reps: exercise.reps,
                   restTimeInSeconds: exercise.restTimeInSeconds,
-                  coverImageUrl: workoutDay.coverImageUrl,
                 })),
               },
             })),
@@ -95,19 +96,16 @@ export class CreateWorkoutPlan {
       if (!result) {
         throw new NotFoundError("Workout plan not found");
       }
-
       return {
         id: result.id,
         name: result.name,
         workoutDays: result.workoutDays.map((day) => ({
-          id: day.id,
           name: day.name,
           weekDay: day.weekDay,
           isRest: day.isRest,
           estimatedDurationInSeconds: day.estimatedDurationInSeconds,
           coverImageUrl: day.coverImageUrl ?? undefined,
           exercises: day.exercises.map((exercise) => ({
-            id: exercise.id,
             order: exercise.order,
             name: exercise.name,
             sets: exercise.sets,

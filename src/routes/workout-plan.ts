@@ -5,13 +5,15 @@ import { ZodTypeProvider } from "fastify-type-provider-zod";
 import { NotFoundError } from "../errors/index.js";
 import { auth } from "../lib/auth.js";
 import { ErrorSchema, WorkoutPlanSchema } from "../schemas/index.js";
-import { CreateWorkoutPlan } from "../useCases/CreateWorkoutPlan.js";
+import { CreateWorkoutPlan } from "../usecases/CreateWorkoutPlan.js";
 
 export const workoutPlanRoutes = async (app: FastifyInstance) => {
   app.withTypeProvider<ZodTypeProvider>().route({
     method: "POST",
     url: "/",
     schema: {
+      tags: ["Workout Plan"],
+      summary: "Create a workout plan",
       body: WorkoutPlanSchema.omit({ id: true }),
       response: {
         201: WorkoutPlanSchema,

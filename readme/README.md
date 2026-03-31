@@ -405,3 +405,13 @@ npx ctx7 setup
 ![alt text](image-37.png)
 
 ![alt text](image-39.png)
+
+## Inserindo o atributo, rota... para coverImgeUrl 
+
+- copiar o arquivo json
+
+[text](<workout-plan (1).json>)
+
+
+![alt text](image-40.png)
+

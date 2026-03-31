@@ -406,12 +406,20 @@ npx ctx7 setup
 
 ![alt text](image-39.png)
 
-## Inserindo o atributo, rota... para coverImgeUrl 
+### Inserindo o atributo, rota... para coverImgeUrl
 
 - copiar o arquivo json
 
 [text](<workout-plan (1).json>)
 
-
 ![alt text](image-40.png)
 
+### ❯ Execute @tasks/01.md, movido as rotas para @src/routes/workout-plan.ts.
+
+- Para testar o Workoutsession copiado os IDs de WorkoutPlan, WorkoutDay e no momento do envio desmarcar Content-Type
+
+![alt text](image-41.png)
+
+- Se tentar enviar novamente ele da erro
+
+![alt text](image-42.png)

@@ -423,3 +423,13 @@ npx ctx7 setup
 - Se tentar enviar novamente ele da erro
 
 ![alt text](image-42.png)
+
+### Execute @tasks/02.md, movido as rotas para @src/routes/workout-plan.ts.
+
+- Inserir os dados de WorkoutPlanId, WorkoutDayIde, SessionId depois passar no Json a data
+
+![alt text](image-43.png)
+
+![alt text](image-44.png)
+
+Aula 02 - 1:40 task 03.md

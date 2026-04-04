@@ -432,4 +432,14 @@ npx ctx7 setup
 
 ![alt text](image-44.png)
 
-Aula 02 - 1:40 task 03.md
+### Execute @tasks/03.md, modificado o weeday de string para enum
+
+- Inserido a data do dia, precisou reiniciar a app para testar.
+
+![alt text](image-46.png)
+
+![alt text](image-47.png)
+
+![alt text](image-45.png)
+
+Aula 02 - 2:00 task 06.md
